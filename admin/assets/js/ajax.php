@@ -1,5 +1,6 @@
+
 <?php
-require_once("../../db/dbhelper.php");
+require_once("../../../db/dbhelper.php");
 
 if (!empty($_POST)) {
     if (isset($_POST['action'])) {
@@ -15,10 +16,11 @@ if (!empty($_POST)) {
             case ('deleteproduct'):
                 if (isset($_POST['id'])) {
                     $id = $_POST['id'];
-                    $sql = 'delete from product where product.id=' . $id;
+                    $sql = 'delete from product where id=' . $id;
                     execute($sql);
                 }
                 break;
         }
     }
 }
+

@@ -10,7 +10,7 @@ require_once '../../db/dbhelper.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -38,7 +38,7 @@ require_once '../../db/dbhelper.php';
                             <th width=50px>STT</th>
                             <th>Tên Sản Phẩm</th>
                             <th>Giá bán (kg)</th>
-                            <th>Nội dung</th>
+                            <th>Mô Tả</th>
                             <th>Hình ảnh</th>
                             <th width = 50px></th>
                             <th width = 50px></th>
@@ -73,13 +73,12 @@ require_once '../../db/dbhelper.php';
     </div>
     <script type="text/javascript">
         function deleteProduct(id) {
-            console.log(id);
             var option = confirm('Bạn có chắc muốn xóa sản phẩm này không!!')
             if (!option) {
                 return;
             }
             //ajax lệnh post    
-            $.post('ajax.php', {
+            $.post('../assets/js/ajax.php', {
                 'id': id,
                 'action': 'deleteproduct'
             }, function(data) {

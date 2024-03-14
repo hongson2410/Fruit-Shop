@@ -2,7 +2,7 @@
 require_once '../../db/dbhelper.php';
 
 $id=$name='';
-if (!empty($_POST)){
+if (isset($_POST)){
     if(isset($_POST['name'])){
         $name= $_POST['name'];
     }
